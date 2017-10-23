@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Progress</title>
+  <style>
+    #wraper{
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 10px;
+    }
+  
+    #progress{
+      font-size: 15px;
+      width: 10%;
+      height: 18px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<div id="wraper">
+<div id="progress">
+10%
+</div>
+</div>
+<br/>
+<button onclick="run()">Hit</button>
+
+<script>
+
+function run() {
+  let bar = document.getElementById('progress');
+  let width = 10;
+  let stop = setInterval(hit, 500);
+  function hit() {
+    if (width>=100){
+      clearInterval(stop);
+    }
+    else {
+      width++;
+      bar.style.width = width + '%';
+      bar.innerHTML = width * 1 + '%';
+    }
+  }
+}
+</script>
+</body>
+</html>
